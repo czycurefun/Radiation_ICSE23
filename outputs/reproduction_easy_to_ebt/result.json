@@ -1,0 +1,64 @@
+{
+  "method": "RADIATION reproduction: source requirement-linking classifier plus distance-enhanced adversarial domain adaptation",
+  "config": {
+    "source": "easy",
+    "target": "EBT",
+    "model_name": "prajjwal1/bert-tiny",
+    "device": "cuda:0",
+    "batch_size": 8,
+    "max_length": 128,
+    "source_epochs": 1,
+    "adapt_epochs": 1,
+    "source_train_limit": 64,
+    "target_train_limit": 64,
+    "eval_limit": 0,
+    "mmd_weight": 0.1,
+    "seed": 2026
+  },
+  "dataset_sizes": {
+    "source_train": 64,
+    "source_test": 12,
+    "target_train": 64,
+    "target_test": 10
+  },
+  "metrics": {
+    "source_domain_eval": {
+      "loss": 0.6910107135772705,
+      "accuracy": 0.5833333333333334,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 5,
+      "total": 12
+    },
+    "source_only_target_eval": {
+      "loss": 0.6800402879714966,
+      "accuracy": 0.6,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "total": 10
+    },
+    "adapted_target_eval": {
+      "loss": 0.6818138599395752,
+      "accuracy": 0.6,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "total": 10
+    }
+  },
+  "outputs": {
+    "models": "outputs/reproduction_easy_to_ebt/models",
+    "source_only_predictions": "outputs/reproduction_easy_to_ebt/source_only_target_predictions.tsv",
+    "adapted_predictions": "outputs/reproduction_easy_to_ebt/adapted_target_predictions.tsv"
+  }
+}
